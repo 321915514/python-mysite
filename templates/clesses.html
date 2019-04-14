@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block css %}
+{% endblock %}
+{% block content %}
+
+    <h1>班级列表</h1>
+    <div>
+    <input type="button" value="添加">
+    </div>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>标题</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in cls_list %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.caption }}</td>
+            <td>
+                <a>编辑</a>|<a>删除</a>
+            </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+    </table>
+{% endblock %}
+{% block js %}
+    <script>
+       $(function () {
+           $('#classes').addClass('active');
+       })
+    </script>
+{% endblock %}
